@@ -6,18 +6,23 @@ h1,h2,h3,h4,h5,h6{font-size:100%;}
 em{font-style:normal;}
 ul,ol,li,dl,dt,dd{list-style:none;}
 a{text-decoration:none;color:#333;}
-a:hover{text-decoration:none;color:#F40;}
+a:hover{text-decoration:none;color:#FE544A;}
 img{border:0px;}
 table{border-collapse:collapse;border-spacing:0;}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 .clearfix{zoom:1;}
 
 /* common */
-html{background:url(../../static/Sky.jpeg) no-repeat center center fixed}
-.wrap{width:958px;min-height:500px;_height:500px;margin:90px auto 0;border:1px dashed #09f;}
-.register{width:400px;background:#111;padding:50px 80px 60px;margin:0 auto;text-align:center;}
-
-
+html{background:url(../../static/Sky.jpeg) no-repeat center center fixed;background-size:cover;}
+.wrap{width:958px;min-height:500px;_height:500px;margin:0 auto;}
+.register{width:400px;background:#111;padding:50px 80px 60px;margin:90px auto 0;text-align:center;}
+.register h3{font-size:30px;color:#fff;font-weight:normal;border-bottom:1px solid #1d1d1d;padding-bottom:15px;}
+.register .more{font-size:16px;margin:15px auto 0;}
+.register .more{color:#666;transition:.5s;}
+.register .more span:hover{border-bottom:2px solid #FE544A;color:#eee;cursor:pointer;}
+.register .more i{font-style:normal;padding-left:5px;}
+.register .avatar{width:250px;height:0;margin:0 auto 25px;}
+.register .avatar img{border-radius:50%;display:none;}
 
 /* noteList */
 
