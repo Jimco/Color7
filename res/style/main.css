@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* Reset */
+body,h1,h2,h3,h4,h5,h6,blockquote,p,pre,dl,dd,ol,ul,caption,th,td,form,fieldset,legend,input,button,textarea,address{margin:0;padding:0}
+body,button,input,select,textarea{font: 12px/1.5 \5FAE\8F6F\96C5\9ED1,Arial,tahoma, Srial, helvetica, sans-serif;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+em{font-style:normal;}
+ul,ol,li,dl,dt,dd{list-style:none;}
+a{text-decoration:none;color:#333;}
+a:hover{text-decoration:none;color:#F40;}
+img{border:0px;}
+table{border-collapse:collapse;border-spacing:0;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{zoom:1;}
+
+/* common */
+html{background:url(../../static/Sky.jpeg) no-repeat center center fixed}
+.wrap{width:958px;min-height:500px;_height:500px;margin:90px auto 0;border:1px dashed #09f;}
+.register{width:400px;background:#111;padding:50px 80px 60px;margin:0 auto;text-align:center;}
+
+
+
+/* noteList */
+
+
+
+
+/* toolBar */
+.toolBar{height:45px;position:fixed;right:0;left:0;bottom:0;background:#fff;box-shadow:0 -1px 0 rgba(0, 0, 0, 0.11);z-index:110;}
+.toolMenu li{width:52px;height:45px;float:left;border-right:1px solid #ededed;}
+.toolMenu li a{display:block;width:100%;height:100%;text-indent:-9999px;overflow:hidden;background:url(../../static/main-nav-stencils.png) #000;outline:none;cursor:pointer;}
+.toolMenu li.home a{background-position:-954px 0;}
+.toolMenu li.profile a{background-position:-106px 0;}
+.toolMenu li.note a{background-position:-212px 0;}
+.toolMenu li.ask a{background-position:-742px 0;}
+.toolMenu li.write a{background-position:-636px 0;}
+.toolMenu li.active{width:54px;height:49px;}
+.toolMenu li.active a{background:url(../../static/main-nav-stencils.png) #FE544A;background-position:-900px 4px;margin-left:-1px;margin-top:-4px;border:none;border-radius:5px 5px 0 0;}
+.copyright{float:right;height:100%;margin-right:20px;font-size:12px;color:#bbb;}
+.copyright p{line-height:45px;}
+.copyright p a{color:#bbb;-webkit-transition:.5s;}
+.copyright p a:hover{color:#333;}
+
+
+
+/* Tip */
+.xytip { font-size: 10px; position: absolute; padding: 5px; z-index: 100000; }
+.xytip-inner { background-color: #000; color: #FFF; max-width: 200px; padding: 5px 8px 4px 8px; text-align: center; }
+.xytip-inner { border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px; }
+.xytip-arrow { position: absolute; width: 0; height: 0; line-height: 0; border: 5px dashed #000; }
+.xytip-arrow-n { border-bottom-color: #000; }
+.xytip-arrow-s { border-top-color: #000; }
+.xytip-arrow-e { border-left-color: #000; }
+.xytip-arrow-w { border-right-color: #000; }
+.xytip-n .xytip-arrow { top: 0px; left: 50%; margin-left: -5px; border-bottom-style: solid; border-top: none; border-left-color: transparent; border-right-color: transparent; }
+  .xytip-nw .xytip-arrow { top: 0; left: 10px; border-bottom-style: solid; border-top: none; border-left-color: transparent; border-right-color: transparent;}
+  .xytip-ne .xytip-arrow { top: 0; right: 10px; border-bottom-style: solid; border-top: none;  border-left-color: transparent; border-right-color: transparent;}
+.xytip-s .xytip-arrow { bottom: 0; left: 50%; margin-left: -5px; border-top-style: solid; border-bottom: none;  border-left-color: transparent; border-right-color: transparent; }
+  .xytip-sw .xytip-arrow { bottom: 0; left: 10px; border-top-style: solid; border-bottom: none;  border-left-color: transparent; border-right-color: transparent; }
+  .xytip-se .xytip-arrow { bottom: 0; right: 10px; border-top-style: solid; border-bottom: none; border-left-color: transparent; border-right-color: transparent; }
+.xytip-e .xytip-arrow { right: 0; top: 50%; margin-top: -5px; border-left-style: solid; border-right: none; border-top-color: transparent; border-bottom-color: transparent; }
+.xytip-w .xytip-arrow { left: 0; top: 50%; margin-top: -5px; border-right-style: solid; border-left: none; border-top-color: transparent; border-bottom-color: transparent; }
+

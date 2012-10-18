@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>App Demo</title>
+  <meta name="" content="" />
+  <link type="text/css" rel="stylesheet" href="style/main.css" />
+  <!-- <script type="text/javascript" src="scripts/app-min.js"></script> -->
+  <script type="text/javascript" src="scripts/basic/jquery-1.7.1.js"></script>
+  <script type="text/javascript" src="scripts/basic/underscore-1.3.3.js"></script>
+  <script type="text/javascript" src="scripts/basic/backbone.js"></script>
+  <script type="text/javascript" src="scripts/basic/JSON.js"></script>
+  <script type="text/javascript" src="scripts/basic/jquery.cookie.js"></script>
+  <script type="text/javascript" src="scripts/plugins/jquery.xytip.js"></script>
+  <script type="text/javascript" src="scripts/backbone-localstorage.js"></script>
+  <script type="text/javascript" src="scripts/application.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      App.initialize();
+      $(".tooltip").xytip();
+    });
+  </script>
+</head>
+<body>
+
+  <div class="wrap">
+    <div class="register">
+      <p>Hello world!</p>
+    </div>
+    <!-- <ul class="noteList">
+      <li></li>
+    </ul> -->
+  </div>
+
+  <div class="toolBar">
+    <ul class="toolMenu">
+      <li class="home active"><a class="tooltip" href="#profile" title="首页">首页</a></li>
+      <li class="profile"><a class="tooltip" href="#profile" title="简介">简介</a></li>
+      <li class="note"><a class="tooltip" href="#note" title="记录列表">记录列表</a></li>
+      <li class="ask"><a class="tooltip" href="#ask" title="答疑">答疑</a></li>
+      <li class="write"><a class="tooltip" href="#write" title="写记录">写记录</a></li>
+    </ul>
+    <div class="copyright"><p>Powered by <a href="http://www.xiejiancong.com/">Jimco</a></p></div>
+  </div>
+
+  <script type="text/template" id="register">
+    <div class="avatar">
+      <img src="" alt="" width="" height="" />
+    </div>
+  </script>
+
+</body>
+</html>
