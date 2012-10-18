@@ -18,21 +18,21 @@
     $(function(){
       App.initialize();
       $(".tooltip").xytip();
-      
+
       // 页面交互 - 动画效果
       $(".register .more").toggle(function(){
         $(".register")
-          .stop()
-          .animate({paddingTop: "-=30", paddingBottom: "-=30"}, 800).delay(100)
-          .animate({paddingTop: "+=30", paddingBottom: "+=30"}, 500)
-          .find(".avatar").stop().delay(1200).animate({height: "250"}, 1000)
-          .find("img").delay(2500).fadeIn(1000).end().end()
+          .stop(true,true)
+          .animate({paddingTop: "-=20", paddingBottom: "-=20"}, 600).delay(150)
+          .animate({paddingTop: "+=20", paddingBottom: "+=20"}, 500)
+          .find(".avatar").stop(true,true).delay(1000).animate({height: "250"}, 500)
+          .find("img").stop(true,true).delay(1600).fadeIn(800).end().end()
           .find(".more i").text("-")
       }, function(){
         $(".register")
-          .stop()
-          .find(".avatar img").fadeOut(1000).end()
-          .find(".avatar").stop().delay(1200).animate({height: 0}, 1000).end()
+          .stop(true, true)
+          .find(".avatar img").stop(true,true).fadeOut(500).end()
+          .find(".avatar").stop(true,true).delay(600).animate({height: 0}, 500).end()
           .find(".more i").text("+")
 
       })
