@@ -13,52 +13,26 @@
   <script type="text/javascript" src="scripts/basic/jquery.cookie.js"></script>
   <script type="text/javascript" src="scripts/plugins/jquery.xytip.js"></script>
   <script type="text/javascript" src="scripts/backbone-localstorage.js"></script>
-  <script type="text/javascript" src="scripts/application.js"></script>
   <script type="text/javascript">
     $(function(){
-      App.initialize();
-      $(".tooltip").xytip();
+      
 
-      // 页面交互 - 动画效果
-      $(".register .more").toggle(function(){
-        $(".register")
-          .stop(true,true)
-          .animate({paddingTop: "-=20", paddingBottom: "-=20"}, 600).delay(150)
-          .animate({paddingTop: "+=20", paddingBottom: "+=20"}, 500)
-          .find(".avatar").stop(true,true).delay(1000).animate({height: "250"}, 500)
-          .find("img").stop(true,true).delay(1600).fadeIn(800).end().end()
-          .find(".more i").text("-")
-      }, function(){
-        $(".register")
-          .stop(true, true)
-          .find(".avatar img").stop(true,true).fadeOut(500).end()
-          .find(".avatar").stop(true,true).delay(600).animate({height: 0}, 500).end()
-          .find(".more i").text("+")
-
-      })
     });
   </script>
 </head>
 <body>
 
-  <div class="wrap">
-    <div class="register">
-      <div class="avatar"><img src="../static/avatar.jpg" width="250px" height="250px"></div>
-      <h3>前端那些事儿</h3>
-      <p class="more"><span>More</span><i>+</i></p>
-    </div>
-    <!-- <ul class="noteList">
-      <li></li>
-    </ul> -->
+  <div id="wrap">
+    
   </div>
 
   <div class="toolBar">
     <ul class="toolMenu">
-      <li class="home active"><a class="tooltip" href="#profile" title="首页">首页</a></li>
-      <li class="profile"><a class="tooltip" href="#profile" title="简介">简介</a></li>
-      <li class="note"><a class="tooltip" href="#note" title="记录列表">记录列表</a></li>
-      <li class="ask"><a class="tooltip" href="#ask" title="答疑">答疑</a></li>
-      <li class="write"><a class="tooltip" href="#write" title="写记录">写记录</a></li>
+      <li class="homeNav active"><a class="tooltip" href="#" title="首页">首页</a></li>
+      <li class="profile"><a class="tooltip" href="#!profile" title="简介">简介</a></li>
+      <li class="note"><a class="tooltip" href="#!note" title="记录列表">记录列表</a></li>
+      <li class="ask"><a class="tooltip" href="#!ask" title="答疑">答疑</a></li>
+      <li class="write"><a class="tooltip" href="#!write" title="写记录">写记录</a></li>
     </ul>
     <div class="copyright"><p>Powered by <a href="http://www.xiejiancong.com/" target="_blank">Jimco</a></p></div>
   </div>
@@ -69,5 +43,21 @@
     </div>
   </script>
 
+  <script type="text/template" id="home">
+    <div class="home">
+      <div class="avatar"><img src="../static/avatar.jpg" width="250px" height="250px"></div>
+      <h3><%= title %></h3>
+      <p class="more"><span>More</span><i>+</i></p>
+    </div>
+  </script>
+
+  <script type="text/template" id="profile">
+    <div class="demo">
+      <p>Hello world!</p>
+    </div>
+  </script>
+
+
+  <script type="text/javascript" src="scripts/application.js"></script>
 </body>
 </html>
