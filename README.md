@@ -1,8 +1,8 @@
-## Note Single Page Application
+## Color7 Single Page Application
 
-### Note Application 
+### Color7 Application 
 
-这是一个记录心情、文字分享的网页应用
+这是一个记录心情、文字分享的小清新网页应用
 
 这里是文艺青年的闷骚地，二逼青年的小清新
 
