@@ -6,7 +6,7 @@
 (function(XY){
 
   // profile 页视图
-  App.Views.profile = Backbone.View.extend({
+  XY.Views.profile = Backbone.View.extend({
     el: $("#wrap"),
     template: _.template($("#profile").html()),
     initialize: function(){

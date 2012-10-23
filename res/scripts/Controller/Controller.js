@@ -15,13 +15,16 @@
       "!write": "write"
     },
     home: function(){
+
+      var homeModel = new XY.Models.home({title: "Jimco"});
+
       console.log("home start");
-      new App.View.home({model: homeModel });
+      new XY.Views.home({model: homeModel });
       
     },
     profile: function(){
       console.log("profile start");
-      new App.View.profile;
+      new XY.Views.profile;
 
     },
     note: function(){
@@ -42,7 +45,7 @@
 
 $(function(){
   console.log("App init");
-  App.initialize();
+  XY.initialize();
   $(".tooltip").xytip();
 
 });

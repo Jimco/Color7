@@ -15,7 +15,7 @@
     Views: {},
     initialize: function(){
       console.log("app start");
-      new App.Controller.router();
+      new XY.Controller.router();
       Backbone.history.start()
     }
 

@@ -59,6 +59,7 @@
             <path path="${current.dir}/Collection/noteCollection.js"/>
             <path path="${current.dir}/View/homeView.js"/>
             <path path="${current.dir}/View/profileView.js"/>
+            <path path="${current.dir}/Plugins/jquery.xytip.js"/>
             <path path="${current.dir}/Controller/Controller.js"/>
         </concat>
     </target>
