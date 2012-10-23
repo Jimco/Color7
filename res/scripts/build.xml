@@ -53,7 +53,13 @@
             <path path="${current.dir}/basic/backbone.js"/>
             <path path="${current.dir}/basic/jquery.cookie.js"/>
             <path path="${current.dir}/basic/JSON.js"/>
-            <path path="${current.dir}/application.js"/>
+            <path path="${current.dir}/system.js"/>
+            <path path="${current.dir}/Model/userModel.js"/>
+            <path path="${current.dir}/Model/homeModel.js"/>
+            <path path="${current.dir}/Collection/noteCollection.js"/>
+            <path path="${current.dir}/View/homeView.js"/>
+            <path path="${current.dir}/View/profileView.js"/>
+            <path path="${current.dir}/Controller/Controller.js"/>
         </concat>
     </target>
 </project>

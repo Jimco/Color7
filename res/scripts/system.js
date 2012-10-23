@@ -5,12 +5,20 @@
  */
 (function(W, undefined){
 
-  var XY = W.XY || {};
+  var XY = W.XY = {
 
-  XY.Controller = {};
-  XY.Plugins = {};
-  XY.Models = {};
-  XY.Collections = {};
-  XY.Views = {};
+    Version: 0.2,
+    Controller: {},
+    Plugins: {},
+    Models: {},
+    Collections: {},
+    Views: {},
+    initialize: function(){
+      console.log("app start");
+      new App.Controller.router();
+      Backbone.history.start()
+    }
+
+  };
 
 })(window);

@@ -39,3 +39,11 @@
   });
 
 })(window.XY);
+
+$(function(){
+  console.log("App init");
+  App.initialize();
+  $(".tooltip").xytip();
+
+});
+
