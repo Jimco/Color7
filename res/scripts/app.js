@@ -12218,9 +12218,9 @@ var json_parse = (function () {
  * Version: 0.1
  * Date: 2012-10-18
  */
-(function(W, undefined){
+(function(window, undefined){
 
-  var XY = W.XY = {
+  window.XY = {
 
     Version: 0.2,
     Controller: {},
@@ -12242,34 +12242,44 @@ var json_parse = (function () {
  * Version: 0.1
  * Date: 2012-10-18
  */
-(function(XY){
+(function(window, undefined){
+
+  XY = window.XY || {};
 
   // 用户 Model
   XY.Models.user = Backbone.Model.extend({
     
   });
 
-})(window.XY);
+  window.XY = XY;
+
+})(window);
 
 /**
  * Note beta
  * Version: 0.1
  * Date: 2012-10-18
  */
-(function(XY){
+(function(window, undefined){
+
+  XY = window.XY || {};
 
   // 首页 Model
   XY.Models.home = Backbone.Model.extend({
 
   });
 
-})(window.XY);
+  window.XY = XY;
+
+})(window);
 /**
  * Note beta
  * Version: 0.1
  * Date: 2012-10-18
  */
-(function(XY){
+(function(window, undefined){
+
+  XY = window.XY || {};
 
   // 首页模块视图
   XY.Views.home = Backbone.View.extend({
@@ -12310,13 +12320,17 @@ var json_parse = (function () {
 
   });
 
-})(window.XY);
+  window.XY = XY;
+
+})(window);
 /**
  * Note beta
  * Version: 0.1
  * Date: 2012-10-18
  */
-(function(XY){
+(function(window, undefined){
+
+  XY = window.XY || {};
 
   // profile 页视图
   XY.Views.profile = Backbone.View.extend({
@@ -12331,7 +12345,9 @@ var json_parse = (function () {
     }
   });
 
-})(window.XY);
+  window.XY = XY;
+
+})(window);
 /**
  * xyTip plugin v1.0
  * 2012-09-21
@@ -12539,7 +12555,9 @@ var json_parse = (function () {
  * Version: 0.1
  * Date: 2012-10-18
  */
-(function(XY){
+(function(window, undefined){
+
+  XY = window.XY || {};
 
   // 全局路由控制
   XY.Controller.router = Backbone.Router.extend({
@@ -12577,7 +12595,9 @@ var json_parse = (function () {
     }
   });
 
-})(window.XY);
+  window.XY = XY;
+
+})(window);
 
 $(function(){
   console.log("App init");

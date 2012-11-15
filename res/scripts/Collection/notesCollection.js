@@ -3,7 +3,9 @@
  * Version: 0.1
  * Date: 2012-10-18
  */
-(function(XY){
+(function(window, undefined){
+
+  XY = window.XY || {};
 
   // 消息 collection
   XY.Collections.user = Backbone.Collection.extend({
@@ -12,5 +14,6 @@
 
   });
 
+  window.XY = XY;
 
-})(window.XY);
+})(window);
