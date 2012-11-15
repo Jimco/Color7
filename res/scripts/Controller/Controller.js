@@ -3,7 +3,9 @@
  * Version: 0.1
  * Date: 2012-10-18
  */
-(function(XY){
+(function(window, undefined){
+
+  XY = window.XY || {};
 
   // 全局路由控制
   XY.Controller.router = Backbone.Router.extend({
@@ -41,7 +43,9 @@
     }
   });
 
-})(window.XY);
+  window.XY = XY;
+
+})(window);
 
 $(function(){
   console.log("App init");

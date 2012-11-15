@@ -3,9 +3,9 @@
  * Version: 0.1
  * Date: 2012-10-18
  */
-(function(W, undefined){
+(function(window, undefined){
 
-  var XY = W.XY = {
+  window.XY = {
 
     Version: 0.2,
     Controller: {},

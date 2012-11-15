@@ -3,7 +3,9 @@
  * Version: 0.1
  * Date: 2012-10-18
  */
-(function(XY){
+(function(window, undefined){
+
+  XY = window.XY || {};
 
   // 首页模块视图
   XY.Views.home = Backbone.View.extend({
@@ -44,4 +46,6 @@
 
   });
 
-})(window.XY);
+  window.XY = XY;
+
+})(window);
