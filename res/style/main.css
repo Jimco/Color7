@@ -12,14 +12,15 @@ table{border-collapse:collapse;border-spacing:0;}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 .clearfix{zoom:1;}
 
-/* common */
+/* Common */
 html{background:url(../../static/Sky.jpeg) no-repeat center center fixed;background-size:cover;}
 #wrap{width:958px;min-height:500px;_height:500px;margin:0 auto;position:relative;}
 
-/* register */
+/* Register */
 .register{}
 
-/* home */
+
+/* Home */
 .home{width:400px;background:#111;padding:50px 80px 60px;margin:0 auto;text-align:center;position:relative;top:280px;}
 .home h3{font-size:30px;color:#fff;font-weight:normal;border-bottom:1px solid #1d1d1d;padding-bottom:15px;}
 .home .more{font-size:16px;margin:15px auto 0;}
@@ -29,15 +30,14 @@ html{background:url(../../static/Sky.jpeg) no-repeat center center fixed;backgro
 .home .avatar{width:250px;height:0;margin:0 auto 25px;}
 .home .avatar img{border-radius:50%;display:none;}
 
-/* intro */
+/* Intro */
 .intro{background:#fff;box-shadow:0 0 0 1px rgba(0, 0, 0, 0.1);border-radius:5px;width:600px;height:800px;margin:90px auto 100px;}
 
-/* noteList */
+/* NoteList */
 
 
 
-
-/* toolBar */
+/* ToolBar */
 .toolBar{height:45px;position:fixed;right:0;left:0;bottom:0;background:#fff;box-shadow:0 -1px 0 rgba(0, 0, 0, 0.11);z-index:110;}
 .toolMenu li{width:52px;height:45px;float:left;border-right:1px solid #ededed;}
 .toolMenu li a{display:block;width:100%;height:100%;text-indent:-9999px;overflow:hidden;background:url(../../static/main-nav-stencils.png) #000;outline:none;cursor:pointer;}
@@ -56,20 +56,21 @@ html{background:url(../../static/Sky.jpeg) no-repeat center center fixed;backgro
 
 
 /* Tip */
-.xytip { font-size: 10px; position: absolute; padding: 5px; z-index: 100000; }
-.xytip-inner { background-color: #000; color: #FFF; max-width: 200px; padding: 5px 8px 4px 8px; text-align: center; }
-.xytip-inner { border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px; }
-.xytip-arrow { position: absolute; width: 0; height: 0; line-height: 0; border: 5px dashed #000; }
-.xytip-arrow-n { border-bottom-color: #000; }
-.xytip-arrow-s { border-top-color: #000; }
-.xytip-arrow-e { border-left-color: #000; }
-.xytip-arrow-w { border-right-color: #000; }
-.xytip-n .xytip-arrow { top: 0px; left: 50%; margin-left: -5px; border-bottom-style: solid; border-top: none; border-left-color: transparent; border-right-color: transparent; }
-  .xytip-nw .xytip-arrow { top: 0; left: 10px; border-bottom-style: solid; border-top: none; border-left-color: transparent; border-right-color: transparent;}
-  .xytip-ne .xytip-arrow { top: 0; right: 10px; border-bottom-style: solid; border-top: none;  border-left-color: transparent; border-right-color: transparent;}
-.xytip-s .xytip-arrow { bottom: 0; left: 50%; margin-left: -5px; border-top-style: solid; border-bottom: none;  border-left-color: transparent; border-right-color: transparent; }
-  .xytip-sw .xytip-arrow { bottom: 0; left: 10px; border-top-style: solid; border-bottom: none;  border-left-color: transparent; border-right-color: transparent; }
-  .xytip-se .xytip-arrow { bottom: 0; right: 10px; border-top-style: solid; border-bottom: none; border-left-color: transparent; border-right-color: transparent; }
-.xytip-e .xytip-arrow { right: 0; top: 50%; margin-top: -5px; border-left-style: solid; border-right: none; border-top-color: transparent; border-bottom-color: transparent; }
-.xytip-w .xytip-arrow { left: 0; top: 50%; margin-top: -5px; border-right-style: solid; border-left: none; border-top-color: transparent; border-bottom-color: transparent; }
+.xytip{font-size:10px;position:absolute;padding:5px;z-index:100000;}
+.xytip-inner{background-color:#000;color:#FFF;max-width:200px;padding:5px 8px 4px 8px;text-align:center;}
+.xytip-inner{border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;}
+.xytip-arrow{position:absolute;width:0;height:0;line-height:0;border:5px dashed #000;}
+.xytip-arrow-n{border-bottom-color:#000;}
+.xytip-arrow-s{border-top-color:#000;}
+.xytip-arrow-e{border-left-color:#000;}
+.xytip-arrow-w{border-right-color:#000;}
+.xytip-n .xytip-arrow{top:0px;left:50%;margin-left:-5px;border-bottom-style:solid;border-top:none;border-left-color:transparent;border-right-color:transparent;}
+.xytip-nw .xytip-arrow{top:0;left:10px;border-bottom-style:solid;border-top:none;border-left-color:transparent;border-right-color:transparent;}
+.xytip-ne .xytip-arrow{top:0;right:10px;border-bottom-style:solid;border-top:none;border-left-color:transparent;border-right-color:transparent;}
+.xytip-s .xytip-arrow{bottom:0;left:50%;margin-left:-5px;border-top-style:solid;border-bottom:none;border-left-color:transparent;border-right-color:transparent;}
+.xytip-sw .xytip-arrow{bottom:0;left:10px;border-top-style:solid;border-bottom:none;border-left-color:transparent;border-right-color:transparent;}
+.xytip-se .xytip-arrow{bottom:0;right:10px;border-top-style:solid;border-bottom:none;border-left-color:transparent;border-right-color:transparent;}
+.xytip-e .xytip-arrow{right:0;top:50%;margin-top:-5px;border-left-style:solid;border-right:none;border-top-color:transparent;border-bottom-color:transparent;}
+.xytip-w .xytip-arrow{left:0;top:50%;margin-top:-5px;border-right-style:solid;border-left:none;border-top-color:transparent;border-bottom-color:transparent;}
+
 

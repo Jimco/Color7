@@ -12214,141 +12214,6 @@ var json_parse = (function () {
     };
 } ());
 /**
- * Note beta
- * Version: 0.1
- * Date: 2012-10-18
- */
-(function(window, undefined){
-
-  window.XY = {
-
-    Version: 0.2,
-    Controller: {},
-    Plugins: {},
-    Models: {},
-    Collections: {},
-    Views: {},
-    initialize: function(){
-      console.log("app start");
-      new XY.Controller.router();
-      Backbone.history.start()
-    }
-
-  };
-
-})(window);
-/**
- * Note beta
- * Version: 0.1
- * Date: 2012-10-18
- */
-(function(window, undefined){
-
-  XY = window.XY || {};
-
-  // 用户 Model
-  XY.Models.user = Backbone.Model.extend({
-    
-  });
-
-  window.XY = XY;
-
-})(window);
-
-/**
- * Note beta
- * Version: 0.1
- * Date: 2012-10-18
- */
-(function(window, undefined){
-
-  XY = window.XY || {};
-
-  // 首页 Model
-  XY.Models.home = Backbone.Model.extend({
-
-  });
-
-  window.XY = XY;
-
-})(window);
-/**
- * Note beta
- * Version: 0.1
- * Date: 2012-10-18
- */
-(function(window, undefined){
-
-  XY = window.XY || {};
-
-  // 首页模块视图
-  XY.Views.home = Backbone.View.extend({
-    el: $("#wrap"),
-    template : _.template($('#home').html()),
-    events: {
-      "click .more span": "homeAnim"
-    },
-    initialize: function(){
-      console.log(this.model.toJSON());
-      // this.model.on("change", this.render, this);
-      // this.model.on("add", this.render, this);
-      this.render();
-
-    },
-    homeAnim: function(){
-      var toggle = this.$(".avatar img").is(":visible");
-      if( !toggle ){
-        this.$(".home")
-          .stop(true,true)
-          .animate({paddingTop: "-=20", paddingBottom: "-=20", top: "300"}, 500).delay(200)
-          .animate({paddingTop: "+=20", paddingBottom: "+=20", top: "100"}, 500)
-          .find(".avatar").stop(true,true).delay(700).animate({height: "270"}, 500)
-          .find("img").stop(true,true).delay(1200).fadeIn(500).end().end()
-          .find(".more i").text("-")
-      }else{
-        this.$(".home")
-          .stop(true, true)
-          .find(".avatar img").stop(true,true).fadeOut(300).end()
-          .find(".avatar").stop(true,true).delay(350).animate({height: 0}, 500).end()
-          .delay(350).animate({top: "280"}, 500).end()
-          .find(".more i").text("+")
-      }
-    },
-    render: function(){
-      this.$el.html(this.template( this.model.toJSON() ))
-    }
-
-  });
-
-  window.XY = XY;
-
-})(window);
-/**
- * Note beta
- * Version: 0.1
- * Date: 2012-10-18
- */
-(function(window, undefined){
-
-  XY = window.XY || {};
-
-  // profile 页视图
-  XY.Views.profile = Backbone.View.extend({
-    el: $("#wrap"),
-    template: _.template($("#profile").html()),
-    initialize: function(){
-
-      this.render();
-    },
-    render: function(){
-      this.$el.html(this.template())
-    }
-  });
-
-  window.XY = XY;
-
-})(window);
-/**
  * xyTip plugin v1.0
  * 2012-09-21
  * 
@@ -12550,6 +12415,281 @@ var json_parse = (function () {
   };
     
 })(jQuery);
+/**
+ * jQuery Easing v1.3
+ * Open source under the BSD License.
+ */
+jQuery.easing['jswing'] = jQuery.easing['swing'];
+
+jQuery.extend( jQuery.easing,
+{
+  // t: current time, b: begInnIng value, c: change In value, d: duration
+  
+  def: 'easeOutQuad',
+  swing: function (x, t, b, c, d) {
+    //alert(jQuery.easing.default);
+    return jQuery.easing[jQuery.easing.def](x, t, b, c, d);
+  },
+  easeInQuad: function (x, t, b, c, d) {
+    return c*(t/=d)*t + b;
+  },
+  easeOutQuad: function (x, t, b, c, d) {
+    return -c *(t/=d)*(t-2) + b;
+  },
+  easeInOutQuad: function (x, t, b, c, d) {
+    if ((t/=d/2) < 1) return c/2*t*t + b;
+    return -c/2 * ((--t)*(t-2) - 1) + b;
+  },
+  easeInCubic: function (x, t, b, c, d) {
+    return c*(t/=d)*t*t + b;
+  },
+  easeOutCubic: function (x, t, b, c, d) {
+    return c*((t=t/d-1)*t*t + 1) + b;
+  },
+  easeInOutCubic: function (x, t, b, c, d) {
+    if ((t/=d/2) < 1) return c/2*t*t*t + b;
+    return c/2*((t-=2)*t*t + 2) + b;
+  },
+  easeInQuart: function (x, t, b, c, d) {
+    return c*(t/=d)*t*t*t + b;
+  },
+  easeOutQuart: function (x, t, b, c, d) {
+    return -c * ((t=t/d-1)*t*t*t - 1) + b;
+  },
+  easeInOutQuart: function (x, t, b, c, d) {
+    if ((t/=d/2) < 1) return c/2*t*t*t*t + b;
+    return -c/2 * ((t-=2)*t*t*t - 2) + b;
+  },
+  easeInQuint: function (x, t, b, c, d) {
+    return c*(t/=d)*t*t*t*t + b;
+  },
+  easeOutQuint: function (x, t, b, c, d) {
+    return c*((t=t/d-1)*t*t*t*t + 1) + b;
+  },
+  easeInOutQuint: function (x, t, b, c, d) {
+    if ((t/=d/2) < 1) return c/2*t*t*t*t*t + b;
+    return c/2*((t-=2)*t*t*t*t + 2) + b;
+  },
+  easeInSine: function (x, t, b, c, d) {
+    return -c * Math.cos(t/d * (Math.PI/2)) + c + b;
+  },
+  easeOutSine: function (x, t, b, c, d) {
+    return c * Math.sin(t/d * (Math.PI/2)) + b;
+  },
+  easeInOutSine: function (x, t, b, c, d) {
+    return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
+  },
+  easeInExpo: function (x, t, b, c, d) {
+    return (t==0) ? b : c * Math.pow(2, 10 * (t/d - 1)) + b;
+  },
+  easeOutExpo: function (x, t, b, c, d) {
+    return (t==d) ? b+c : c * (-Math.pow(2, -10 * t/d) + 1) + b;
+  },
+  easeInOutExpo: function (x, t, b, c, d) {
+    if (t==0) return b;
+    if (t==d) return b+c;
+    if ((t/=d/2) < 1) return c/2 * Math.pow(2, 10 * (t - 1)) + b;
+    return c/2 * (-Math.pow(2, -10 * --t) + 2) + b;
+  },
+  easeInCirc: function (x, t, b, c, d) {
+    return -c * (Math.sqrt(1 - (t/=d)*t) - 1) + b;
+  },
+  easeOutCirc: function (x, t, b, c, d) {
+    return c * Math.sqrt(1 - (t=t/d-1)*t) + b;
+  },
+  easeInOutCirc: function (x, t, b, c, d) {
+    if ((t/=d/2) < 1) return -c/2 * (Math.sqrt(1 - t*t) - 1) + b;
+    return c/2 * (Math.sqrt(1 - (t-=2)*t) + 1) + b;
+  },
+  easeInElastic: function (x, t, b, c, d) {
+    var s=1.70158;var p=0;var a=c;
+    if (t==0) return b;  if ((t/=d)==1) return b+c;  if (!p) p=d*.3;
+    if (a < Math.abs(c)) { a=c; var s=p/4; }
+    else var s = p/(2*Math.PI) * Math.asin (c/a);
+    return -(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
+  },
+  easeOutElastic: function (x, t, b, c, d) {
+    var s=1.70158;var p=0;var a=c;
+    if (t==0) return b;  if ((t/=d)==1) return b+c;  if (!p) p=d*.3;
+    if (a < Math.abs(c)) { a=c; var s=p/4; }
+    else var s = p/(2*Math.PI) * Math.asin (c/a);
+    return a*Math.pow(2,-10*t) * Math.sin( (t*d-s)*(2*Math.PI)/p ) + c + b;
+  },
+  easeInOutElastic: function (x, t, b, c, d) {
+    var s=1.70158;var p=0;var a=c;
+    if (t==0) return b;  if ((t/=d/2)==2) return b+c;  if (!p) p=d*(.3*1.5);
+    if (a < Math.abs(c)) { a=c; var s=p/4; }
+    else var s = p/(2*Math.PI) * Math.asin (c/a);
+    if (t < 1) return -.5*(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
+    return a*Math.pow(2,-10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )*.5 + c + b;
+  },
+  easeInBack: function (x, t, b, c, d, s) {
+    if (s == undefined) s = 1.70158;
+    return c*(t/=d)*t*((s+1)*t - s) + b;
+  },
+  easeOutBack: function (x, t, b, c, d, s) {
+    if (s == undefined) s = 1.70158;
+    return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+  },
+  easeInOutBack: function (x, t, b, c, d, s) {
+    if (s == undefined) s = 1.70158; 
+    if ((t/=d/2) < 1) return c/2*(t*t*(((s*=(1.525))+1)*t - s)) + b;
+    return c/2*((t-=2)*t*(((s*=(1.525))+1)*t + s) + 2) + b;
+  },
+  easeInBounce: function (x, t, b, c, d) {
+    return c - jQuery.easing.easeOutBounce (x, d-t, 0, c, d) + b;
+  },
+  easeOutBounce: function (x, t, b, c, d) {
+    if ((t/=d) < (1/2.75)) {
+      return c*(7.5625*t*t) + b;
+    } else if (t < (2/2.75)) {
+      return c*(7.5625*(t-=(1.5/2.75))*t + .75) + b;
+    } else if (t < (2.5/2.75)) {
+      return c*(7.5625*(t-=(2.25/2.75))*t + .9375) + b;
+    } else {
+      return c*(7.5625*(t-=(2.625/2.75))*t + .984375) + b;
+    }
+  },
+  easeInOutBounce: function (x, t, b, c, d) {
+    if (t < d/2) return jQuery.easing.easeInBounce (x, t*2, 0, c, d) * .5 + b;
+    return jQuery.easing.easeOutBounce (x, t*2-d, 0, c, d) * .5 + c*.5 + b;
+  }
+});
+/**
+ * Note beta
+ * Version: 0.1
+ * Date: 2012-10-18
+ */
+(function(window, undefined){
+
+  window.XY = {
+
+    Version: 0.2,
+    Controller: {},
+    Plugins: {},
+    Models: {},
+    Collections: {},
+    Views: {},
+    initialize: function(){
+      console.log("app start");
+      new XY.Controller.router();
+      Backbone.history.start()
+    }
+
+  };
+
+})(window);
+/**
+ * Note beta
+ * Version: 0.1
+ * Date: 2012-10-18
+ */
+(function(window, undefined){
+
+  XY = window.XY || {};
+
+  // 用户 Model
+  XY.Models.user = Backbone.Model.extend({
+    
+  });
+
+  window.XY = XY;
+
+})(window);
+
+/**
+ * Note beta
+ * Version: 0.1
+ * Date: 2012-10-18
+ */
+(function(window, undefined){
+
+  XY = window.XY || {};
+
+  // 首页 Model
+  XY.Models.home = Backbone.Model.extend({
+
+  });
+
+  window.XY = XY;
+
+})(window);
+/**
+ * Note beta
+ * Version: 0.1
+ * Date: 2012-10-18
+ */
+(function(window, undefined){
+
+  XY = window.XY || {};
+
+  // 首页模块视图
+  XY.Views.home = Backbone.View.extend({
+    el: $("#wrap"),
+    template : _.template($('#home').html()),
+    events: {
+      "click .more span": "homeAnim"
+    },
+    initialize: function(){
+      console.log(this.model.toJSON());
+      // this.model.on("change", this.render, this);
+      // this.model.on("add", this.render, this);
+      this.render();
+
+    },
+    homeAnim: function(){
+      var toggle = this.$(".avatar img").is(":visible");
+      if( !toggle ){
+        this.$(".home")
+          .stop(true,true)
+          .animate({paddingTop: "-=20", paddingBottom: "-=20", top: "300"}, 500).delay(200)
+          .animate({paddingTop: "+=20", paddingBottom: "+=20", top: "100"}, 500)
+          .find(".avatar").stop(true,true).delay(700).animate({height: "270"}, 500)
+          .find("img").stop(true,true).delay(1200).fadeIn(500).end().end()
+          .find(".more i").text("-")
+      }else{
+        this.$(".home")
+          .stop(true, true)
+          .find(".avatar img").stop(true,true).fadeOut(300).end()
+          .find(".avatar").stop(true,true).delay(350).animate({height: 0}, 500).end()
+          .delay(350).animate({top: "280"}, 500).end()
+          .find(".more i").text("+")
+      }
+    },
+    render: function(){
+      this.$el.html(this.template( this.model.toJSON() ))
+    }
+
+  });
+
+  window.XY = XY;
+
+})(window);
+/**
+ * Note beta
+ * Version: 0.1
+ * Date: 2012-10-18
+ */
+(function(window, undefined){
+
+  XY = window.XY || {};
+
+  // profile 页视图
+  XY.Views.profile = Backbone.View.extend({
+    el: $("#wrap"),
+    template: _.template($("#profile").html()),
+    initialize: function(){
+
+      this.render();
+    },
+    render: function(){
+      this.$el.html(this.template())
+    }
+  });
+
+  window.XY = XY;
+
+})(window);
 /**
  * Note beta
  * Version: 0.1

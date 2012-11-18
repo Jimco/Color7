@@ -3,33 +3,14 @@
   @author: xiejiancong.com
 -->
 <project name="refund" default="build">
-    <!--当前文件目录路径-->
     <dirname property="current.dir" file="${ant.file}"/>
-    <!--配置文件路径-->
     <property file="build.properties"/>
     <property name="build.dir" location="${current.dir}"/>
-    <!--yuicompressor程序路径-->
-    <property name="yuicompressor.path" location="../../assets/yuicompressor.jar"/>
     <!--gcc程序路径-->
     <property name="closure.path" location="../../assets/compiler.jar"/>
-    <!--声明依赖-->
     <target name="build" depends="concat,minify-js-closure"></target>
-    <!--使用YUI压缩js-->
-    <target name="minify-js">
-        <echo>开始压缩 js 文件 - YUI</echo>
-        <apply executable="java" dest="${current.dir}/min">
-            <fileset dir="${current.dir}" includes="*.js"/>
-            <arg line="-jar"/>
-            <arg path="${yuicompressor.path}"/>
-            <arg line="--charset utf-8"/>
-            <arg value="-o"/>
-            <targetfile/>
-            <mapper type="glob" from="*.js" to="*-min.js"/>
-        </apply>
-    </target>
-    <!--使用GCC压缩js-->
     <target name="minify-js-closure">
-        <echo>开始压缩 js 文件 - GCC</echo>
+        <echo>gcc开始压缩</echo>
         <apply executable="java" verbose="true" dest="${current.dir}" failonerror="true" parallel="false">
             <fileset dir="${current.dir}" includes="app.js"/>
             <arg line="-jar"/>
@@ -44,22 +25,22 @@
             <mapper type="regexp" from="^(.*)\.js$" to="\1-min.js"/>
         </apply>
     </target>
-    <!--合并js文件-->
     <target name="concat">
-        <echo>开始合并 js 文件</echo>
+        <echo>开始合并</echo>
         <concat destfile="${current.dir}/app.js" encoding="utf-8">
             <path path="${current.dir}/basic/jquery-1.7.1.js"/>
             <path path="${current.dir}/basic/underscore-1.3.3.js"/>
             <path path="${current.dir}/basic/backbone.js"/>
             <path path="${current.dir}/basic/jquery.cookie.js"/>
             <path path="${current.dir}/basic/JSON.js"/>
+            <path path="${current.dir}/Plugins/jquery.xytip.js"/>
+            <path path="${current.dir}/Plugins/jquery.easing.js"/>
             <path path="${current.dir}/system.js"/>
             <path path="${current.dir}/Model/userModel.js"/>
             <path path="${current.dir}/Model/homeModel.js"/>
             <path path="${current.dir}/Collection/noteCollection.js"/>
             <path path="${current.dir}/View/homeView.js"/>
             <path path="${current.dir}/View/profileView.js"/>
-            <path path="${current.dir}/Plugins/jquery.xytip.js"/>
             <path path="${current.dir}/Controller/Controller.js"/>
         </concat>
     </target>
