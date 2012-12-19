@@ -38,7 +38,7 @@
       <!-- <p><a href="http://www.xiejiancong.com" target="_blank">www.xiejiancong.com</a></p> -->
     </div>
   </div>
-  <script type="text/javascript" src="http://res.xiejiancong.com/js/jquery-1.7.2.min.js"></script>
+  <!-- <script type="text/javascript" src="http://res.xiejiancong.com/js/jquery-1.7.2.min.js"></script> -->
   <script type="text/javascript">
     !function(window, undefined){
 
@@ -68,21 +68,43 @@
             }
             return html.join("&");
           }
+        },
+
+        getByClass: function(className){
+          var allArray = new Array();
+          var elements = new Array();
+          if(typeof document.all != "undefined"){
+            allArray = document.all;//返回文档中的所有元素
+          }else{
+            allArray = document.getElementsByTagName("*");//返回文档中的所有元素
+          }
+          for(var i = 0; i < allArray.length; i++){
+            var isClassName = Util.hasClass(allArray[i], className);
+            if(isClassName){
+              elements.push(allArray[i]); 
+            } 
+          }
+          return elements;
+        },
+
+        hasClass: function(element, className){
+          var elementClassName = element.className;
+          if(elementClassName.length == 0) return false; 
+          if(elementClassName == className || elementClassName.match(new RegExp("(^|\\s)"+className+"(\\s|$)"))) return true; 
+          return false;
         }
       }
 
-      $(function(){
+      window.onload = function(){
         var userInfo = Util.params(document.location.search)
-          , userName = decodeURI(userInfo.name) || 'Jimco'
-          , myDear = decodeURI(userInfo.mydear) || 'Baby';
+          , userName = userInfo.name ? decodeURI(userInfo.name) : 'Jimco'
+          , myDear = userInfo.mydear ? decodeURI(userInfo.mydear) : 'Baby';
 
-        console.log(userInfo);
+        Util.getByClass('userName')[0].innerHTML = myDear;
+        Util.getByClass('myDear')[0].innerHTML = userName;
+        document.title = 'My Dear: ' + myDear + '，新的一年里，愿你心想事成！ - Powered by www.xiejiancong.com';
 
-        $('.userName').text(myDear);
-        $('.myDear').text(userName);
-        $('title').text('My Dear: ' + myDear + '，新的一年里，愿你心想事成！ - Powered by www.xiejiancong.com');
-
-      });
+      };
 
     }(window);
 
