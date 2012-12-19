@@ -72,13 +72,15 @@
       }
 
       $(function(){
-        var userInfo = Util.params
-          , userName = userInfo.name || 'Jimco'
-          , myDear = userInfo.mydear || 'Baby';
+        var userInfo = Util.params(document.location.search)
+          , userName = decodeURI(userInfo.name) || 'Jimco'
+          , myDear = decodeURI(userInfo.mydear) || 'Baby';
 
-        $('.userName').text(userName);
-        $('.myDear').text(myDear);
-        $('title').text('My Dear: ' + userName + '，新的一年里，愿你心想事成！ - Powered by www.xiejiancong.com');
+        console.log(userInfo);
+
+        $('.userName').text(myDear);
+        $('.myDear').text(userName);
+        $('title').text('My Dear: ' + myDear + '，新的一年里，愿你心想事成！ - Powered by www.xiejiancong.com');
 
       });
 
