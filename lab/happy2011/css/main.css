@@ -14,23 +14,23 @@ table{border-collapse:collapse;border-spacing:0;}
 body{background: url(../images/index_bg.jpg) #000;}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 .clearfix{zoom:1;}
-#container{height:1000px;margin:auto 0px;background: url(../images/index_bg.jpg);}
+#container{height:1000px;width:1300px;margin:0 auto;background: url(../images/index_bg.jpg);}
 
 /* Header */
-.header{height:508px;margin:auto 0px;background: url(../images/bg_01.jpg);position:relative;}
+.header{height:508px;margin:auto 0px;background: url(../images/bg_01.jpg) center center no-repeat;position:relative;}
 .time{width: auto;height:auto;float:left;clear:right;margin-top: -20px;}
 .newyear{width: 300px;height:350px;float:right;margin-top:250px;}
 .userName{position:absolute;top:260px;left:365px;color:#fff;font-size:20px;font-weight:normal;}
 
 /* Main */
-.middle{height:298px;background: url(../images/bg_02.jpg);position:relative;}
+.middle{height:298px;background: url(../images/bg_02.jpg) center center no-repeat;position:relative;}
 .middle img{width: auto;height:auto;float:right;margin-top: -135px;margin-right:100px;}
 .music {width:200px;height:350px;padding:0; margin:0; text-align: center;float:left;margin-top:-300px;}
 .sign{font-size:15px;color:#cdcdcd;position:absolute;top:300px;right:80px;}
 .myDear{margin:0 0 0 5px;}
 
 /* Footer */
-#footer{height:194px;background: url(../images/bg_03.jpg);}
+#footer{height:194px;background: url(../images/bg_03.jpg) center center no-repeat;}
 #footer p{width:300px;height:50px;color:#ccc;float:right;margin-top:130px;}
 #footer p a{color:#ccc;font-size:16px;}
 
