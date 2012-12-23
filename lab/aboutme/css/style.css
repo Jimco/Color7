@@ -64,7 +64,8 @@ a.back{position:absolute;bottom:5px;right:5px;}
 #socialLink span.qq a:hover{background-position:0 -32px;}
 #socialLink span.sina a{background-position:0 -16px;}
 #socialLink span.sina a:hover{background-position:0 0;}
-#socialLink span.github a{background-position:0 -96px;}
+#socialLink span.github a{background-position:0 -112px;}
+#socialLink span.github a:hover{background-position:0 -96px;}
 #socialLink span.sto a{background-position:0 -80px;}
 #socialLink span.sto a:hover{background-position:0 -64px;}
 
