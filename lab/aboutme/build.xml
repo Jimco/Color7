@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  @author: xiejiancong.com
+-->
+<project name="refund" default="build">
+    <!--当前文件目录路径-->
+    <dirname property="current.dir" file="${ant.file}"/>
+    <!--配置文件路径-->
+    <property file="build.properties"/>
+    <property name="build.dir" location="${current.dir}"/>
+    <!--yuicompressor程序路径-->
+    <property name="yuicompressor.path" location="../../assets/yuicompressor.jar"/>
+    <!--gcc程序路径-->
+    <property name="closure.path" location="../../assets/compiler.jar"/>
+    <!--声明依赖-->
+    <target name="build" depends="concat,minify-js-closure"></target>
+    <!--使用YUI压缩js-->
+    <target name="minify-js">
+        <echo>开始压缩 js 文件 - YUI</echo>
+        <apply executable="java" dest="${current.dir}/min">
+            <fileset dir="${current.dir}" includes="*.js"/>
+            <arg line="-jar"/>
+            <arg path="${yuicompressor.path}"/>
+            <arg line="--charset utf-8"/>
+            <arg value="-o"/>
+            <targetfile/>
+            <mapper type="glob" from="*.js" to="*-min.js"/>
+        </apply>
+    </target>
+    <!--使用GCC压缩js-->
+    <target name="minify-js-closure">
+        <echo>开始压缩 js 文件 - GCC</echo>
+        <apply executable="java" verbose="true" dest="${current.dir}" failonerror="true" parallel="false">
+            <fileset dir="${current.dir}" includes="about.js"/>
+            <arg line="-jar"/>
+            <arg path="${closure.path}"/>
+            <arg line="--charset utf-8"/>
+            <arg value="--warning_level"/>
+            <arg value="QUIET"/>
+            <arg value="--js"/>
+            <srcfile/>
+            <arg value="--js_output_file"/>
+            <targetfile/>
+            <mapper type="regexp" from="^(.*)\.js$" to="\1-min.js"/>
+        </apply>
+    </target>
+    <!--合并js文件-->
+    <target name="concat">
+        <echo>开始合并 js 文件</echo>
+        <concat destfile="${current.dir}/about.js" encoding="utf-8">
+            <path path="${current.dir}/jquery.easing.min.js"/>
+            <path path="${current.dir}/msgbox.js"/>
+            <path path="${current.dir}/aboutme.js"/>
+
+        </concat>
+    </target>
+</project>
