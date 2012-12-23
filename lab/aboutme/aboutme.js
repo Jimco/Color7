@@ -101,12 +101,29 @@ $(function(){
   $('#msgBtn').on('click', function(e){
     var $target = $(e.currentTarget)
       , data = $('#mailMe').serializeArray()
+      , isChecked = true
       , dataObj = {};
 
-    $target.find('img').show()
+    
     $.each(data, function(i, data){
+      if(!data.value){
+        XY.msgbox.show(data.name + "不能为空！", 4, 2000);
+        isChecked = false;
+        return false;
+      }else if(data.name === 'email'){
+        var emailReg = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+        if(!emailReg.test(data.value)){
+          XY.msgbox.show("您的邮箱不合法！", 4, 2000);
+          isChecked = false;
+          return false;
+        }
+      }
       dataObj[data.name] = data.value;
     });
+
+    if(!isChecked) return;
+    $target.find('img').show();
+    $target.find('input').attr('disabled', true);
     $.ajax({
       type: 'POST',
       url: mailUrl,
@@ -114,6 +131,7 @@ $(function(){
       success: function(data){
         data = eval('(' + data + ')');
         $target.find('img').hide();
+        $target.find('input').attr('disabled', false);
         $('#mailMe').find('input[type="text"], textarea').val('');
         XY.msgbox.show(data.username + "，来信已收到，我会尽快回复！", 4, 3000);
       }

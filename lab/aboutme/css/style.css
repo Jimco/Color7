@@ -13,10 +13,23 @@ table{border-collapse:collapse;border-spacing:0;}
 /* Common */
 .clearfix:after, .progress:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 .clearfix, .progress{zoom:1;}
-body{background:url(../images/background.png) #fff repeat-x top center;}
+body{background:url(../images/background.png) #fff repeat-x top center;overflow:hidden;}
+
+/* Header */
+#header-frame {background:#000;background:rgba(0,0,0,.9);height:40px;text-align:left;padding:0 10px;box-shadow:0 1px 5px rgba(0,0,0,.5);position:fixed;_position:static;top:0;left:0;right:0;z-index:9999;}
+#header{width:1200px;margin:0 auto;position:relative;}
+#logo{width:200px;height:40px;position:absolute;left:10px;background:url(../images/logo.png) no-repeat;text-indent:-9999px;overflow:hidden;}
+#menu{position:absolute;left:210px;border-left:1px solid #262626;height:40px;}
+#menu li{float:left;border-right:1px solid #262626;height:40px;}
+#menu a {display:inline-block;height:40px;line-height:40px;font-size:14px;text-align:center;padding:0 20px;text-shadow:none;color:#ccc;}
+#menu a:hover, .current {color:#fff;background-color:#202020;}
+#nav {position:absolute;right:0;}
+#nav li {float:left;height:40px;line-height:40px;padding:0 10px;}
+#nav a{display:block;text-shadow:none;color:#ccc;}
+#nav a:hover{color:#fff;}
 
 /* Content */
-.title h1{color:#fff;margin:40px 0px 20px 40px;text-shadow:1px 1px 1px #555;font-weight:normal;font-size:35px;}
+#content{margin:120px auto 0;}
 a.back{position:absolute;bottom:5px;right:5px;}
 
 .reference{position:absolute;bottom:5px;left:5px;}
