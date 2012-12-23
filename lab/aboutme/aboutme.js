@@ -107,7 +107,6 @@ $(function(){
     $.each(data, function(i, data){
       dataObj[data.name] = data.value;
     });
-    console.log(dataObj);
     $.ajax({
       type: 'POST',
       url: mailUrl,

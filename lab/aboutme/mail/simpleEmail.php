@@ -50,14 +50,12 @@
     $mail->AltBody ="text/html";
     if(!$mail->Send())
     {
-      echo "邮件发送有误 <p>";
-      echo "邮件错误信息: " . $mail->ErrorInfo;
       echo "{'result': 0, 'message': '发送失败，请确认网络是否正常！'}";
       exit;
     }
     else {
       // echo "$user_name $subject $from_email 感谢你的来信！<br />";
-      echo "{'result': 1, 'username': '$user_name', 'email': '$from_email'}";
+      echo "{'username': '$user_name', 'email': '$from_email'}";
     }
   }
 
