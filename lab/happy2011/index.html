@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>新年快乐！ - www.xiejiancong.com</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+  <div id="container">
+    <div class="header">
+      <h1 class="userName"></h1>
+      <div class="time">
+        <object id="flash-show" width="178" height="205" type="application/x-shockwave-flash" data="images/time.swf">
+          <param name="movie" value="images/time.swf" />
+          <param name="wmode" value="transparent" />
+        </object>
+      </div>
+      <div class="newyear">  
+        <object id="flash-show" width="300" height="350" type="application/x-shockwave-flash" data="images/newyear.swf">
+          <param name="movie" value="images/newyear.swf" />
+          <param name="wmode" value="transparent" />
+        </object>
+      </div>
+    </div>
+
+    <div class="middle">
+      <img src="images/middle_01.png" />
+      <div class="music">
+        <object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0' width='200' height='350'><param name='movie' value='http://www.eingzone.com/services/emp/player/v01.swf?user=caoyoung' />
+          <param name='quality' value='autohigh' />
+          <param name='wmode' value='transparent' />
+          <embed type='application/x-shockwave-flash' src='http://www.eingzone.com/services/emp/player/v01.swf?user=caoyoung' quality='autohigh' wmode='transparent' width='200' height='350'></embed>
+        </object>
+      </div>
+      <div class="sign">你永远的朋友<span class="myDear"></span></div>
+    </div>
+    <div id="footer">
+      <!-- <p><a href="http://www.xiejiancong.com" target="_blank">www.xiejiancong.com</a></p> -->
+    </div>
+  </div>
+  <!-- <script type="text/javascript" src="http://res.xiejiancong.com/js/jquery-1.7.2.min.js"></script> -->
+  <script type="text/javascript">
+    !function(window, undefined){
+
+      Util = {
+        params: function(u){
+          u = u || location.search;
+          if( !u ){ return false; }
+          var p = u.split("\?");
+          var o = {};
+          p = p.length ==2 ? p[1] : p[0];
+          var list = p.split("\&");
+          for( var i=0; i<list.length; i++ ){
+            var m = list[i];
+            m = m.split("\=");
+            o[m[0]] = m.slice(1,m.length).join("=") || "";
+          }
+          return o ;
+        },
+
+        decodeParams: function(para){
+          if( typeof para !== 'object' ){
+            return para;
+          }else{
+            var html = [];
+            for(var p in para ){
+              html.push( p + "=" + encodeURIComponent( para[p]) );
+            }
+            return html.join("&");
+          }
+        },
+
+        getByClass: function(className){
+          var allArray = new Array();
+          var elements = new Array();
+          if(typeof document.all != "undefined"){
+            allArray = document.all;//返回文档中的所有元素
+          }else{
+            allArray = document.getElementsByTagName("*");//返回文档中的所有元素
+          }
+          for(var i = 0; i < allArray.length; i++){
+            var isClassName = Util.hasClass(allArray[i], className);
+            if(isClassName){
+              elements.push(allArray[i]); 
+            } 
+          }
+          return elements;
+        },
+
+        hasClass: function(element, className){
+          var elementClassName = element.className;
+          if(elementClassName.length == 0) return false; 
+          if(elementClassName == className || elementClassName.match(new RegExp("(^|\\s)"+className+"(\\s|$)"))) return true; 
+          return false;
+        }
+      }
+
+      window.onload = function(){
+        var userInfo = Util.params(document.location.search)
+          , userName = userInfo.name ? decodeURI(userInfo.name) : 'Jimco'
+          , myDear = userInfo.mydear ? decodeURI(userInfo.mydear) : 'Baby';
+
+        Util.getByClass('userName')[0].innerHTML = myDear;
+        Util.getByClass('myDear')[0].innerHTML = userName;
+        document.title = 'My Dear: ' + myDear + '，新的一年里，愿你心想事成，天天开心！ - Powered by www.xiejiancong.com';
+
+      };
+
+    }(window);
+
+  </script>   
+</body>
+</html>

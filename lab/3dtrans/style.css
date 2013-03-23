@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* Reset */
+body,h1,h2,h3,h4,h5,h6,blockquote,p,pre,dl,dd,ol,ul,caption,th,td,form,fieldset,legend,input,button,textarea,address{margin:0;padding:0}
+body,button,input,select,textarea{font: 12px/1.5 \5FAE\8F6F\96C5\9ED1,Arial,tahoma, Srial, helvetica, sans-serif;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+em{font-style:normal;}
+ul,ol,li,dl,dt,dd{list-style:none;}
+a{text-decoration:none;color:#333;}
+a:hover{text-decoration:none;color:#F40;}
+img{border:0px;}
+table{border-collapse:collapse;border-spacing:0;}
+
+/* Common */
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{zoom:1;}
+
+/* Main */
+#smartdemo1 {width:600px;height:450px;overflow:hidden;margin: 0;}
+#smartdemo1 li{width:800px;height:600px;}
+
+
