@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>二维码生成工具 - 前端那些事儿，记录前端开发那些事儿！</title>
+  <meta name="keywords" content="前端那些事儿,前端开发,web开发,javascript,html,css,IT互联网">
+  <meta name="description" content="记录前端开发的那些事儿！对互联网有那么一点点热情，对梦想有那么一点点执着！">
+  <meta name="generator" content="www.xiejiancong.com">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/artdialog.css">
+</head>
+<body>
+  <div id="header-frame">
+    <div id="header">
+      <div><a id="logo" href="http://www.xiejiancong.com/" title="前端那些事儿 - 记录前端开发的那些事儿！">前端那些事儿 - 记录前端开发的那些事儿！</a></div>
+      <ul id="menu">
+        <li><a href="http://www.xiejiancong.com/">首页</a></li>
+        <li><a href="http://www.xiejiancong.com/t/">碎语</a></li>
+        <li><a href="http://www.xiejiancong.com/sort/html-css/">HTML/CSS</a></li>
+        <li><a href="http://www.xiejiancong.com/sort/javascript/">JavaScript</a></li>
+        <li><a href="http://www.xiejiancong.com/sort/skill-resources/">技巧资源</a></li>
+        <li><a href="http://www.xiejiancong.com/sort/others/">杂七杂八</a></li>
+      </ul>
+      <ul id="nav">
+        <li><a href="http://www.xiejiancong.com/readerwall/">读者墙</a></li>
+        <li><a href="http://www.xiejiancong.com/t/">碎语</a></li>
+        <li><a href="http://www.xiejiancong.com/guestbook/">留言</a></li>
+        <li><a href="http://www.xiejiancong.com/links/">友情链接</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="qr-main">
+    <div class="qr-wrap">
+      <ul class="qr-menu">
+        <li class="active"><a href="javascript:;">文 本 / 网址</a></li>
+        <li><a href="javascript:;">名 片</a></li>
+        <li style="display:none;"><a href="javascript:;">情 书</a></li>
+      </ul>
+
+      <div class="qr-cont">
+        <div class="qr-text" data-type="text">
+          <textarea name="text"></textarea>
+        </div>
+
+        <div class="qr-card" data-type="card">
+          <table class="vcard-table">
+            <tr>
+              <td width="50%"><label>姓名 ： <input type="text" name="N"></label></td>
+              <td width="50%"><label>电话 ： <input type="text" name="TEL"></label></td>
+            </tr>
+            </tr>
+              <td width="50%"><label>职务 ： <input type="text" name="TIL"></label></td>
+              <td width="50%"><label>邮箱 ： <input type="text" name="EMAIL"></label></td>
+            </tr>
+            </tr>
+              <td width="50%"><label>网址 ： <input type="text" name="URL"></label></td>
+              <td width="50%"><label>单位 ： <input type="text" name="ORG"></label></td>
+            </tr>
+            </tr>
+              <td width="50%"><label>地址 ： <input type="text" name="ADR"></label></td>
+              <td width="50%"></td>                 
+            </tr>
+            <tr>
+              <td colspan="2">
+                <label class="qr-note">备注 ： <textarea name="NOTE"></textarea></label>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="qr-love" style="display:none;">
+          <textarea cols="30" rows="10"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="qr-submit">
+      <div class="qr-btn">
+        <span class="loading"></span>
+        <button type="button">生成QR</button>
+      </div>
+      <div class="choose-type">
+        <p>
+          <label>纠错率：</label>
+          <select name="level">
+            <option value="L">L</option>
+            <option value="M" selected>M</option>
+            <option value="Q">Q</option>
+            <option value="H">H</option>
+          </select>
+        </p>
+        <p>
+          <label>尺寸：</label>
+          <select name="size">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5" selected>5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </p>
+      </div>
+    </div>
+    <div id="qr-show" style="display:none;"></div>
+  </div>
+
+
+  <div class="qr-intro">
+    <p>二维码，又叫QR码，是在一维条码的基础上扩展出的一种具有可读性的条码，用某种特定的几何图形按一定规律在平面上分布的黑白相间的图形记录数据符号信息。</p>
+    <p>随着智能手机和移动互联网的兴起，二维码已成为网页浏览、应用下载、手机购物、移动支付等服务的重要入口，目前已被广泛应用于数字内容下载、自动化文字传输、网址快速连接、身分鉴别与商务交易等领域。</p>
+    <p>当然，除了应用于商业，在移动互联网时代，二维码也可以是每个人的个人身份标识。通过本站提供的，只需几秒钟，您就可以拥有属于自己的二维码名片了！</p>
+  </div>
+  <!--
+  <script src="js/seajs/sea.js" data-config="./js/config" data-main="./js/main.js"></script>
+  -->
+  <script src="http://static.xiejiancong.com/js/jquery-1.8.3.min.js"></script>
+  <script src="js/jquery.artDialog.min.js"></script>
+  <script src="js/artDialog.plugins.min.js"></script>
+  <script src="js/qrcode.js"></script>
+
+</body>
+</html>
